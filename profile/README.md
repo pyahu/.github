@@ -7,43 +7,41 @@
 <h3 align="center">Pyahu</h3>
 
 <p align="center">
-  The dev-to-staging platform for JVM teams.
+  Production-grade JVM, from a single command.
 </p>
 
 <p align="center">
   <a href="https://pyahu.io">Website</a> &middot;
-  <a href="https://shell.pyahu.io">Shell Docs</a> &middot;
-  <a href="https://stacks.pyahu.io">Stacks Docs</a> &middot;
-  <a href="https://cloud.pyahu.io">Cloud</a>
+  <a href="https://pyahu.io#community">Community</a> &middot;
+  <a href="https://pyahu.io#cloud">Cloud</a>
 </p>
 
 ---
 
-Pyahu handles everything before production for Java, Kotlin, and Spring Boot teams. Local environments, managed infrastructure, CI/CD with code analysis, security scanning, and automated tests in every pipeline. Your production stays on AWS, GCP, or Azure. Pyahu makes sure your code gets there tested, scanned, and ready to ship.
+Pyahu gives Java, Kotlin, and Spring Boot teams certified project templates and one CLI that runs the same stack on a local k3d cluster and on a managed cloud. Your team ships features, not DevOps tickets.
 
-## Open Source Projects
+## Pyahu Community
 
-### Pyahu Shell
+Open source. Free, self-hosted.
 
-Containerized dev environment built for JVM engineers. Java 25, Kotlin, Maven, Gradle, PostgreSQL and Kafka client tools, IDE remote dev (IntelliJ, VS Code), all pre-configured in a single Docker image.
+- **Certified templates** — opinionated Spring Boot and Quarkus projects, wired the way Pyahu deploys them.
+- **Pyahu CLI** — spin up a full local stack (k3d cluster + Postgres + Kafka) in one command.
+- **Mise-managed toolchain** — Java, Kotlin, Maven, and Gradle pinned per repo so every workstation is identical.
 
-- [Documentation](https://shell.pyahu.io)
+## Pyahu Cloud
 
-### Pyahu Stacks
+The managed platform. Same CLI, same config — `pyahu deploy` to managed staging and production.
 
-Declarative local infrastructure. Define PostgreSQL (CloudNativePG), Apache Kafka (Strimzi), Infisical (secrets), ingress, and TLS in one YAML file. Provision everything on a local Kind cluster with one command.
-
-- [Documentation](https://stacks.pyahu.io)
+- Framework intelligence auto-detects config and provisions the database.
+- CI/CD, secrets, runtime config, and controlled releases built in.
+- Observability, security scanning, and quality gates on by default.
 
 ## How it works
 
 ```
-Your code ──→ Local dev ──→ Staging ──→ Artifact ──→ Your production
-               (Shell)       (Cloud)    (OCI image +
-               (Stacks)                  Helm chart)
+pyahu init  ──→  pyahu up        ──→  pyahu deploy
+(template)       (local k3d)          (managed cloud)
 ```
-
-**Shell** and **Stacks** are open source. **Cloud** is the managed platform on top.
 
 ## Contact
 
