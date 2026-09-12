@@ -4,45 +4,133 @@
   </a>
 </p>
 
-<h3 align="center">Pyahu</h3>
+<h3 align="center">Pyahu Platform</h3>
 
 <p align="center">
-  Production-grade JVM, from a single command.
+  <strong>Great software. Built on better foundations.</strong><br />
+  A development suite that brings good practices, automation and AI into your team's everyday work.<br />
+  From the first project to production.
 </p>
 
 <p align="center">
   <a href="https://pyahu.io">Website</a> &middot;
-  <a href="https://pyahu.io#community">Community</a> &middot;
-  <a href="https://pyahu.io#cloud">Cloud</a>
+  <a href="https://pyahu.io/pt">Português</a> &middot;
+  <a href="https://cli.pyahu.io">CLI docs</a> &middot;
+  <a href="https://pyahu.io#contact">Contact</a>
 </p>
 
 ---
 
-Pyahu gives Java, Kotlin, and Spring Boot teams certified project templates and one CLI that runs the same stack on a local k3d cluster and on a managed cloud. Your team ships features, not DevOps tickets.
+Welcome to **Pyahu Community** — open foundations and tools you can adopt at your own pace.
 
-## Pyahu Community
+Good engineering takes more than a framework. Pyahu brings together the foundations of software
+delivery, so your team spends more time on the product and less time rebuilding its development
+stack. Distinct tools, one shared direction: start where your team needs help, and adopt the other
+pieces as your workflow grows.
 
-Open source. Free, self-hosted.
+## What we believe
 
-- **Certified templates** — opinionated Spring Boot and Quarkus projects, wired the way Pyahu deploys them.
-- **Pyahu CLI** — spin up a full local stack (k3d cluster + Postgres + Kafka) in one command.
-- **Mise-managed toolchain** — Java, Kotlin, Maven, and Gradle pinned per repo so every workstation is identical.
+- **Good practices, built in** — architecture, testing and observability are part of the work from the start.
+- **Automation with intent** — repeat the checks and routines; keep people in charge of the decisions.
+- **A foundation you own** — open tools, versioned configuration and infrastructure you can understand.
 
-## Pyahu Cloud
+## From idea to production
 
-The managed platform. Same CLI, same config — `pyahu deploy` to managed staging and production.
+| Step | Tool | |
+| --- | --- | --- |
+| 01 · Prepare | [Toolchain](#pyahu-toolchain) | Get the team on the same page |
+| 02 · Create | [Initializer](#pyahu-initializer--coming-soon) | Start with the right foundations |
+| 03 · Develop | [AI Factory](#pyahu-ai-factory--coming-soon) | Build with AI, keep the discipline |
+| 04 · Validate | [CLI](#pyahu-cli) | Make local development real |
+| 05 · Operate | [Open Cluster Foundation](#pyahu-open-cluster-foundation) + [Cloud](#pyahu-cloud-enterprise) | Build infrastructure you understand |
 
-- Framework intelligence auto-detects config and provisions the database.
-- CI/CD, secrets, runtime config, and controlled releases built in.
-- Observability, security scanning, and quality gates on by default.
+## Community projects
 
-## How it works
+| Project | What it does | Status |
+| --- | --- | --- |
+| [**Toolchain**](https://github.com/pyahu/toolchain) | Curated developer tools managed by mise — consistent versions on every workstation | ✅ Available |
+| [**CLI**](https://github.com/pyahu/cli) | Local Kubernetes (k3d) with the services your app needs, in one command | ✅ Available |
+| [**Open Cluster Foundation**](https://github.com/pyahu/open-cluster-foundation) | Production-grade Kubernetes from zero: Terraform + an observable service layer | ✅ OCI available |
+| **Initializer** | Projects generated with your architecture and delivery practices already in place | 🛠️ Coming soon |
+| **AI Factory** | An AI coding harness with an Extreme Programming workflow | 🛠️ Coming soon |
+
+### Pyahu Toolchain
+
+**Get the team on the same page.** A curated, composable set of CLI tools, organized by category
+and managed with [mise](https://mise.jdx.dev). No dev container, no per-language version-manager
+stack — a small cross-stack baseline plus the workflow profiles you choose: `workstation`, `java`,
+`go`, `python`, `node`, `cloud`, `ai`, `arch`.
+
+```sh
+git clone https://github.com/pyahu/toolchain.git ~/.config/pyahu-toolchain
+cd ~/.config/pyahu-toolchain
+./install.sh workstation java cloud   # pick the profiles you use
+```
+
+→ [github.com/pyahu/toolchain](https://github.com/pyahu/toolchain)
+
+### Pyahu CLI
+
+**Make local development real.** Bring up a local Kubernetes cluster and the services your
+application needs, then develop and validate against a reproducible stack on your machine.
+PostgreSQL, ZITADEL (OIDC over local HTTPS), RabbitMQ, Valkey, Kafka, Kafka Connect + Debezium and
+Kafka UI — all declared in a single `pyahu.yaml`.
+
+```sh
+curl -fsSL https://cli.pyahu.io/install.sh | sh
+pyahu init --preset platform   # generate the stack
+pyahu up                       # bring up the cluster
+eval "$(pyahu env)"            # connect your apps
+```
+
+→ [cli.pyahu.io](https://cli.pyahu.io) · [github.com/pyahu/cli](https://github.com/pyahu/cli)
+
+### Pyahu Open Cluster Foundation
+
+**Build infrastructure you understand.** Production-oriented Kubernetes foundations: a Terraform
+foundation per provider plus a provider-agnostic Helmfile base with Envoy Gateway, cert-manager,
+CloudNativePG, Kafka, observability (Prometheus, Loki, Tempo, Grafana) and Argo CD. Every version
+pinned and validated in CI. OCI/OKE today; more providers on the roadmap.
+
+→ [github.com/pyahu/open-cluster-foundation](https://github.com/pyahu/open-cluster-foundation)
+
+### Pyahu Initializer · coming soon
+
+**Your next project, your team's standards.** Choose *how* to build, not just which dependencies to
+install. Initializer turns architecture and organizational practices into a consistent starting
+point:
+
+- **Projects** — Spring Boot · Quarkus · Next.js
+- **Structure** — monorepo or multi-repo · single frontend or microfrontends
+- **Architecture & delivery** — layered or hexagonal · GitHub Actions or GitLab CI
+- **Observability by design** — OpenTelemetry · Grafana · Prometheus · Loki · Tempo · GlitchTip
+
+### Pyahu AI Factory · coming soon
+
+**AI moves fast. Give it an engineering process.** A harness powered by Pi as the model runtime, with an Extreme Programming workflow, curated skills and specialized agents. Turn a
+story into an explicit agreement, work through the test cycle and review the result — while your
+team sets the boundaries. Works with hosted, local or in-house models.
 
 ```
-pyahu init  ──→  pyahu up        ──→  pyahu deploy
-(template)       (local k3d)          (managed cloud)
+Story → Refinement → Test first (red · green · refactor) → Implementation → Review
 ```
 
-## Contact
+## Pyahu Cloud (Enterprise)
 
-hello@pyahu.io
+Community and Enterprise are complementary ways to adopt Pyahu: choose what you run yourself, and
+where you want our team alongside yours.
+
+**Pyahu Cloud** gives your code a place to run — managed delivery and operations with isolated
+environments, PostgreSQL and observability. JVM-first, with guided adoption, an adoption path built
+around your team and a direct relationship with the people building Pyahu.
+
+→ [Talk to the team](https://pyahu.io#contact)
+
+## Get involved
+
+- ⭐ Star and watch the projects above to follow their progress.
+- 🐛 Found a bug or have an idea? Open an issue in the project's repository.
+- 🤝 Pull requests are welcome — source code and configuration are in your hands.
+- ✉️ [hello@pyahu.io](mailto:hello@pyahu.io)
+
+<p align="center"><sub><strong>pyahu</strong> — Better foundations. Better software.</sub></p>
