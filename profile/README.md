@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://pyahu.io">
-    <img src="https://pyahu.io/logo.svg" alt="Pyahu" width="80" />
+    <img src="https://raw.githubusercontent.com/pyahu/.github/main/profile/assets/pyahu-mark.svg" alt="Pyahu" width="80" />
   </a>
 </p>
 
